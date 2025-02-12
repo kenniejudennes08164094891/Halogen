@@ -1,0 +1,62 @@
+@import url('https://fonts.cdnfonts.com/css/euclid-circular-a');
+body {
+  font-family: 'Euclid Circular A';
+  background-image: url('/assets/images/FBN2.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.login-container {
+  background-color:rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+}
+
+.navbar {
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid #1018280D; /* Add a 1px solid black border */
+}
+
+#footer{
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid #1018280D;
+}
+
+
+
+#align-logo{
+  margin-left: 110px;
+}
+
+#align-texts{
+  margin-left: 400px;
+}
+
+
+.text-container {
+  text-align: center;
+  margin-left: -140px;
+}
+
+//   @media only screen and (max-width: 768px) {
+//     .text-container {
+//         margin-left: -100px;
+//         margin-top: 20px;
+//     }
+// }
+
+.text-animation {
+  animation: slide-in 2s ease infinite;
+  font-size: 30px;
+  color: #D1D5DB;
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

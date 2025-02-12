@@ -5,7 +5,11 @@ module.exports = {
         "./node_modules/flowbite/**/*.js"
     ],
     theme: {
-        extend: {},
+        extend: {
+          scrollbar: {
+            enabled: true,
+          },
+        },
     },
     plugins: [require('flowbite/plugin')],
 };

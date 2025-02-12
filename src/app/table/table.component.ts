@@ -46,7 +46,7 @@ export class TableComponent implements OnInit{
   viewFileUploaded(viewDocument: any){
     console.log("document>>", viewDocument);
     localStorage.setItem('excel', viewDocument);
-    this.router.navigate(['/ViewFileUploaded'],{relativeTo: this.route});
+    this.router.navigate(['/viewFileUploaded'],{relativeTo: this.route});
   }
 
   downloadExcelFile(item: Document){
@@ -63,7 +63,7 @@ export class TableComponent implements OnInit{
   }
 
   backToUploads(){
-    this.router.navigateByUrl('/FileUploads')
+    this.router.navigateByUrl('/fileUploads')
   }
 
   ngOnInit(): void {

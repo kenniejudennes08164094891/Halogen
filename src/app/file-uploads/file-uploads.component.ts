@@ -81,7 +81,7 @@ export class FileUploadsComponent {
     this.documentObj = payload;
     //this.service.setDocumentObj(this.documentObj)
     this.service.setDocument(this.documentObj);
-    this.router.navigate(['/Table'], { relativeTo: this.route });
+    this.router.navigate(['/table'], { relativeTo: this.route });
     this.toastr.success(`${payload.fileType} file has been uploaded succesfully!`)
   }else{
     this.toastr.error('please upload either a xlsx, xls or a csv file')

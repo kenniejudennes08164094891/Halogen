@@ -9,6 +9,7 @@ export class Document {
 }
 
 
+
 export interface DocumentInterface{
    fileName: string,
    fileSize: number,
@@ -16,3 +17,22 @@ export interface DocumentInterface{
    document: string,
    viewDocument: string
 }
+
+export const imageAssets = {
+  bgImage: '/assets/images/FBNQuest.png'
+}
+
+export const accountOptions = [
+  {
+    option: 'Talent Signup',
+    matIcon: 'build',
+    route: '/talent/talent-signup',
+    param: 'talent_onboarding'
+  },
+  {
+    option: 'Scouter Signup',
+    matIcon: 'credit_card',
+    route: '/scouter/scouter-signup',
+    param: 'scouter_onboarding'
+  }
+]

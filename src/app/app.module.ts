@@ -13,12 +13,21 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { ToastrModule } from 'ngx-toastr';
+import { AuthComponent } from './auth/auth.component';
+import { WelcomePageComponent } from './welcome-page/welcome-page.component';
+import {MatInputModule} from "@angular/material/input";
+import {MatSelectModule} from "@angular/material/select";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatDialogModule} from "@angular/material/dialog";
+import {MatMenuModule} from "@angular/material/menu";
+import {MatRadioModule} from "@angular/material/radio";
 
 const materialModules = [
   MatSnackBarModule,
   MatCardModule,
   MatIconModule,
-  MatButtonModule
+  MatButtonModule,
+  MatRadioModule,MatMenuModule, MatIconModule,MatCardModule, MatDialogModule, MatSnackBarModule,MatFormFieldModule,MatSelectModule,MatInputModule
 ]
 
 @NgModule({
@@ -27,7 +36,9 @@ const materialModules = [
     FileUploadsComponent,
     TableComponent,
     ViewFileComponent,
-    AlertsComponent
+    AlertsComponent,
+    AuthComponent,
+    WelcomePageComponent
   ],
   imports: [
     BrowserModule,
