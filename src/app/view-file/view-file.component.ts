@@ -27,6 +27,6 @@ export class ViewFileComponent implements OnInit{
 
   routeToUploads(){
     this.router.navigate(['/fileUploads'], {relativeTo: this.route});
-    localStorage.removeItem('excel');
+    localStorage.removeItem('excel')
   }
 }
