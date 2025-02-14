@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Inject} from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AlertsComponent } from '../alerts/alerts.component';
@@ -6,6 +6,7 @@ import { DocumentInterface } from '../models/document';
 import { HalogenService } from '../services/halogen.service';
 import * as XLSX from 'xlsx';
 import { ToastrService } from 'ngx-toastr';
+import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-file-uploads',
@@ -23,12 +24,15 @@ export class FileUploadsComponent {
   documentObj!: DocumentInterface | any;
   data: [][] = [];
   viewDocument: string = '';
+  hasUploaded: boolean = false;
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private snackbar: MatSnackBar,
     private service: HalogenService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    @Inject(MAT_DIALOG_DATA) public dialogData: any,
+  private dialogRef: MatDialogRef<FileUploadsComponent>,
   ) { }
 
 
@@ -48,6 +52,7 @@ export class FileUploadsComponent {
   }
 
   selectExcelFile(event: any) {
+    this.hasUploaded = true
     this.fileSize = event.target.files[0].size / 1000000;
     this.fileName = event.target.files[0].name;
     this.fileExtension = this.fileName.split(".")[1];
@@ -83,6 +88,7 @@ export class FileUploadsComponent {
     this.service.setDocument(this.documentObj);
     this.router.navigate(['/table'], { relativeTo: this.route });
     this.toastr.success(`${payload.fileType} file has been uploaded succesfully!`)
+    this.dialogRef.close();
   }else{
     this.toastr.error('please upload either a xlsx, xls or a csv file')
    // alert('please upload either a xlsx, xls or a csv file')

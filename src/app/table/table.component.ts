@@ -4,6 +4,8 @@ import { Document } from '../models/document';
 import { HalogenService } from '../services/halogen.service';
 import { Subscription, debounceTime } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
+import {MatDialog} from "@angular/material/dialog";
+import {FileUploadsComponent} from "../file-uploads/file-uploads.component";
 
 @Component({
   selector: 'app-table',
@@ -20,7 +22,8 @@ export class TableComponent implements OnInit{
     private router: Router,
     private route: ActivatedRoute,
     private service: HalogenService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private dialog:MatDialog
   ){}
 
   getDocumentObservable(){
@@ -63,7 +66,8 @@ export class TableComponent implements OnInit{
   }
 
   backToUploads(){
-    this.router.navigateByUrl('/fileUploads')
+   // this.router.navigateByUrl('/fileUploads')
+    this.dialog.open(FileUploadsComponent);
   }
 
   ngOnInit(): void {

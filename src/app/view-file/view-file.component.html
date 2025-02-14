@@ -8,10 +8,10 @@
   Route Back
 </button> &nbsp;&nbsp;
     <button (click)="routeToUploads()" class="bg-transparent hover:bg-[#101323] text-blue-700  hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
-  Route To Uploads
+  Upload file
 </button>
   &nbsp;&nbsp;
-  <button class="bg-transparent hover:bg-[#101323] text-blue-700  hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+  <button  (click)="convertToPDF('receipt', {height:290, width: 270 }, 'FBNQuest')" class="bg-transparent hover:bg-[#101323] text-blue-700  hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
     Download PDF
   </button>
 </span>
@@ -19,7 +19,7 @@
     <br><br>
     <div class="flex flex-col">
         <div class="overflow-x-auto sm:mx-0.5 lg:mx-0.5">
-            <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+            <div id="receipt" class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
                 <div class="overflow-hidden">
                     <table class="min-w-full">
                         <tbody>
