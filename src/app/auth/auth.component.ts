@@ -25,6 +25,6 @@ export class AuthComponent {
     this.router.navigate(['/table'],{
       relativeTo: this.route,
       queryParams: {screen: "view_all_uploads"}
-    })
+    });
   }
 }
