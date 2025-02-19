@@ -18,7 +18,7 @@ export class AuthComponent {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]],
       token: ['', [Validators.required]]
-    });
+    })
   }
 
   submit(): void {
