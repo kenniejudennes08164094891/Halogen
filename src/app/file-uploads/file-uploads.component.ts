@@ -25,6 +25,7 @@ export class FileUploadsComponent {
   data: [][] = [];
   viewDocument: string = '';
   hasUploaded: boolean = false;
+  // hello world
   constructor(
     private router: Router,
     private route: ActivatedRoute,
